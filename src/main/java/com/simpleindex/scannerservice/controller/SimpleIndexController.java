@@ -13,15 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller()
 public class SimpleIndexController {
     private static final Logger LOG = LoggerFactory.getLogger(SimpleIndexController.class);
-    // List<Document> documentList = new ArrayList<>();
 
     @Autowired
     private DocumentService documentService;
-
-    /*@PostConstruct
-    public void init() throws Exception {
-        documentList = documentService.getDocuments();
-    }*/
 
     @GetMapping("/document/to/{toDate}/from/{fromDate}")
     public String document(Model model, @PathVariable("toDate") final String toDate, @PathVariable("fromDate") final String fromDate) {

@@ -23,17 +23,20 @@
                 <th>field3</th>
                 <th>field4</th>
                 <th>field5</th>
+                <th>Status</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="document, rowStat: ${documents}"
                 th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
-                <td th:text="${document.id}"></td>
-                <td th:text="${document.field1}"></td>
-                <td th:text="${document.field2}"></td>
-                <td th:text="${document.field3}"></td>
-                <td th:text="${document.field4}"></td>
-                <td th:text="${document.field5}"></td>
+               <!-- <div th:if= "${document.id != 0}">-->
+                    <td th:text="${document.id}"></td>
+                    <td th:text="${document.field1}"></td>
+                    <td th:text="${document.field2}"></td>
+                    <td th:text="${document.field3}"></td>
+                    <td th:text="${document.field4}"></td>
+                    <td th:text="${document.field5}"></td>
+                    <td th:text="${document.message}"></td>
             </tr>
             </tbody>
         </table>

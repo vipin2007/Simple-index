@@ -47,24 +47,26 @@ public class DocumentServiceImpl implements DocumentService {
             }
             docListNew.add(doc);
         }
-        LOG.info("old list size ="+docList.size()+ " and new list size = "+ docListNew.size());
-        LOG.info("old list first val= "+docList.get(0)+ "old list last val = "+ docList.get(docList.size()-1));
-        LOG.info("new list first val= "+docListNew.get(0)+ "new list last val = "+ docListNew.get(docListNew.size()-1));
+        LOG.info("old list size =" + docList.size() + " and new list size = " + docListNew.size());
+        LOG.info("old list first val= " + docList.get(0) + "old list last val = " + docList.get(docList.size() - 1));
+        LOG.info("new list first val= " + docListNew.get(0) + "new list last val = " + docListNew.get(docListNew.size() - 1));
         return docListNew;
     }
 
-    private void addMissingId(List<Document> docListNew, int prev, int next, String from) {
+    private void addMissingId(List<Document> missingDocList, int prev, int next, String fromDate) {
         String msg;
-        Document docNew = null;
+        Document docNotFound = null;
         if (next - prev == 2) {
-            msg = "Data not found for " + from;
-            docNew = new Document("", "", "", msg, "", "");
-            docListNew.add(docNew);
+            msg = fromDate;
+            docNotFound = new Document();
+            docNotFound.setMessage(msg);
+            missingDocList.add(docNotFound);
         } else {
-            String to = Integer.toString(next - 1);
-            msg = "Data not found b/w " + from + " & " + to;
-            docNew = new Document("", "", "", msg, "", "");
-            docListNew.add(docNew);
+            String toDate = Integer.toString(next - 1);
+            msg = fromDate + " to " + toDate;
+            docNotFound = new Document();
+            docNotFound.setMessage(msg);
+            missingDocList.add(docNotFound);
         }
     }
 }

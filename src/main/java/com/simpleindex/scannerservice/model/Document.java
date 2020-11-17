@@ -7,17 +7,27 @@ public class Document {
     private String field3;
     private String field4;
     private String field5;
+    private String message;
 
-    public Document(){
+    public Document() {
     }
 
-    public Document(String id, String field1, String field2, String field3, String field4, String field5) {
+    public Document(String id, String field1, String field2, String field3, String field4, String field5, String message) {
         this.id = id;
         this.field1 = field1;
         this.field2 = field2;
         this.field3 = field3;
         this.field4 = field4;
         this.field5 = field5;
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getId() {

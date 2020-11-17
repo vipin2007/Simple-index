@@ -36,6 +36,11 @@ public class DocumentServiceImpl implements DocumentService {
                 continue;
             }
             next = Integer.parseInt(doc.getInvoiceNumber());
+            if (next == prev) {
+                docListNew.add(doc);
+                prev = next;
+                continue;
+            }
             if (next != prev + 1) {
                 LOG.info("Data not found for custId={}", prev);
                 String msg = null;

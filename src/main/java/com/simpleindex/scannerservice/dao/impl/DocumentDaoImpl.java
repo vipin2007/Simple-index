@@ -31,7 +31,7 @@ public class DocumentDaoImpl implements DocumentDao {
     @Override
     public List<Document> getDocumentsFromDate(String toDate, String fromDate) {
         LOG.info("Fetching the records by using toDate={} and fromDate={}", toDate, fromDate);
-        String sql = "Select ID, FIELD1 , FIELD2, FIELD3, FIELD4, FIELD5 From DOCUMENTS WHERE FIELD4 BETWEEN '" + toDate + "' AND '" + fromDate + "'";
+        String sql = "Select ID, FIELD1 , FIELD2, FIELD3, FIELD4, FIELD5 From DOCUMENTS WHERE FIELD4 BETWEEN '" + toDate + "' AND '" + fromDate + "' ORDER BY FIELD3";
         LOG.info("sql={}", sql);
         List<Document> documentList = jdbcTemplate.query(sql, new DocumentRowMapper());
         LOG.info("returning the number of documents records={}", documentList.size());

@@ -20,11 +20,6 @@ public class SimpleIndexController {
 
     @GetMapping("/")
     public String showForm(Model model) {
-       /* User user = new User();
-        model.addAttribute("user", user);
-
-        List<String> listProfession = Arrays.asList("Developer", "Tester", "Architect");
-        model.addAttribute("listProfession", listProfession);*/
         DocumentBean document = new DocumentBean();
         model.addAttribute("document", document);
         return "simple-index";

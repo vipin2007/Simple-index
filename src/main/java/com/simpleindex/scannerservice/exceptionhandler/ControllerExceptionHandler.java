@@ -1,4 +1,4 @@
-package com.simpleindex.scannerservice.controller;
+package com.simpleindex.scannerservice.exceptionhandler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,5 +18,11 @@ public class ControllerExceptionHandler extends DefaultHandlerExceptionResolver 
     public ResponseEntity<Object> exception(HttpRequestMethodNotSupportedException exception) {
         LOG.error("Method not supported error={}", exception.getMessage());
         return new ResponseEntity<>("Not Supported", HttpStatus.METHOD_NOT_ALLOWED);
+    }
+
+    @ExceptionHandler(value = RuntimeException.class)
+    public ResponseEntity<Object> exception(RuntimeException exception) {
+        LOG.error("Runtime exception={}", exception.getMessage());
+        return new ResponseEntity<>("Not Found", HttpStatus.NOT_FOUND);
     }
 }

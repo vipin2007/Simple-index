@@ -13,30 +13,31 @@
 <body>
 <div class="container">
     <h1>Documents Missing Reports</h1>
-    <div class="row col-md-7 table-responsive">
-        <table id="documentTable" class="table">
+    <div class="table-responsive">
+        <table id="documentTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>field1</th>
-                <th>field2</th>
-                <th>field3</th>
-                <th>field4</th>
-                <th>field5</th>
+                <th>Cust. No.</th>
+                <th>Year</th>
+                <th>Invoice Number</th>
+                <th>Invoice Date</th>
+                <th>Month</th>
                 <th>Status</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="document, rowStat: ${documents}"
-                th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
-               <!-- <div th:if= "${document.id != 0}">-->
-                    <td th:text="${document.id}"></td>
-                    <td th:text="${document.field1}"></td>
-                    <td th:text="${document.field2}"></td>
-                    <td th:text="${document.field3}"></td>
-                    <td th:text="${document.field4}"></td>
-                    <td th:text="${document.field5}"></td>
-                    <td th:text="${document.message}"></td>
+            <!--<tr th:each="document, rowStat: ${documents}"
+                th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'" scope="row">-->
+            <tr th:each="document, rowStat: ${documents}" scope="row">
+                <!-- <div th:if= "${document.id != 0}">-->
+                <td th:text="${document.id}"></td>
+                <td th:text="${document.customerNumber}"></td>
+                <td th:text="${document.year}"></td>
+                <td th:text="${document.invoiceNumber}"></td>
+                <td th:text="${document.invoiceDate}"></td>
+                <td th:text="${document.month}"></td>
+                <td th:text="${document.message}"></td>
             </tr>
             </tbody>
         </table>

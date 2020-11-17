@@ -30,12 +30,12 @@ public class DocumentServiceImpl implements DocumentService {
         int next = 0;
         for (Document doc : docList) {
             if (next == 0 && prev == 0) {
-                next = Integer.parseInt(doc.getField3());
+                next = Integer.parseInt(doc.getInvoiceNumber());
                 prev = next;
                 docListNew.add(doc);
                 continue;
             }
-            next = Integer.parseInt(doc.getField3());
+            next = Integer.parseInt(doc.getInvoiceNumber());
             if (next != prev + 1) {
                 LOG.info("Data not found for custId={}", prev);
                 String msg = null;

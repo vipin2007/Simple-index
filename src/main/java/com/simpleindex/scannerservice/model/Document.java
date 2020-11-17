@@ -2,23 +2,23 @@ package com.simpleindex.scannerservice.model;
 
 public class Document {
     private String id;
-    private String field1;
-    private String field2;
-    private String field3;
-    private String field4;
-    private String field5;
+    private String customerNumber;
+    private String year;
+    private String invoiceNumber;
+    private String invoiceDate;
+    private String month;
     private String message;
 
     public Document() {
     }
 
-    public Document(String id, String field1, String field2, String field3, String field4, String field5, String message) {
+    public Document(String id, String customerNumber, String year, String invoiceNumber, String invoiceDate, String month, String message) {
         this.id = id;
-        this.field1 = field1;
-        this.field2 = field2;
-        this.field3 = field3;
-        this.field4 = field4;
-        this.field5 = field5;
+        this.customerNumber = customerNumber;
+        this.year = year;
+        this.invoiceNumber = invoiceNumber;
+        this.invoiceDate = invoiceDate;
+        this.month = month;
         this.message = message;
     }
 
@@ -38,55 +38,55 @@ public class Document {
         this.id = id;
     }
 
-    public String getField1() {
-        return field1;
+    public String getCustomerNumber() {
+        return customerNumber;
     }
 
-    public void setField1(String field1) {
-        this.field1 = field1;
+    public void setCustomerNumber(String customerNumber) {
+        this.customerNumber = customerNumber;
     }
 
-    public String getField2() {
-        return field2;
+    public String getYear() {
+        return year;
     }
 
-    public void setField2(String field2) {
-        this.field2 = field2;
+    public void setYear(String year) {
+        this.year = year;
     }
 
-    public String getField3() {
-        return field3;
+    public String getInvoiceNumber() {
+        return invoiceNumber;
     }
 
-    public void setField3(String field3) {
-        this.field3 = field3;
+    public void setInvoiceNumber(String invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
     }
 
-    public String getField4() {
-        return field4;
+    public String getInvoiceDate() {
+        return invoiceDate;
     }
 
-    public void setField4(String field4) {
-        this.field4 = field4;
+    public void setInvoiceDate(String invoiceDate) {
+        this.invoiceDate = invoiceDate;
     }
 
-    public String getField5() {
-        return field5;
+    public String getMonth() {
+        return month;
     }
 
-    public void setField5(String field5) {
-        this.field5 = field5;
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     @Override
     public String toString() {
         return "Documents{" +
                 "id=" + id +
-                ", field1='" + field1 + '\'' +
-                ", field2='" + field2 + '\'' +
-                ", field3='" + field3 + '\'' +
-                ", field4='" + field4 + '\'' +
-                ", field5='" + field5 + '\'' +
+                ", field1='" + customerNumber + '\'' +
+                ", field2='" + year + '\'' +
+                ", field3='" + invoiceNumber + '\'' +
+                ", field4='" + invoiceDate + '\'' +
+                ", field5='" + month + '\'' +
                 '}';
     }
 }

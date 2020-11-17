@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>SimpleIndex</title>
+</head>
+<body>
+<div align="center">
+    <h1>Search</h1>
+    <form action="#" th:action="@{/report}" method="post" th:object="${document}">
+        <label>Start Date:</label>
+        <input type="text" th:field="*{toDate}"/><br/><br/>
+        <label>End Date:</label>
+        <input type="text" th:field="*{fromDate}"/><br/>
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

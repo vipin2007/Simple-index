@@ -12,7 +12,7 @@
 
 <body>
 <div class="container">
-    <h1>Documents Missing Reports</h1>
+    <h1 align="center">Report </h1>
     <div class="table-responsive">
         <table id="documentTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -27,10 +27,8 @@
             </tr>
             </thead>
             <tbody>
-            <!--<tr th:each="document, rowStat: ${documents}"
-                th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'" scope="row">-->
+            <input onclick='javascript:window.history.back()' value='Back' type='button'/>
             <tr th:each="document, rowStat: ${documents}" scope="row">
-                <!-- <div th:if= "${document.id != 0}">-->
                 <td th:text="${document.id}"></td>
                 <td th:text="${document.customerNumber}"></td>
                 <td th:text="${document.year}"></td>
